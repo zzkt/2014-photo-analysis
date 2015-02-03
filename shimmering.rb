@@ -153,7 +153,6 @@ def exfoliate (set_id)
      
      puts "#{photo.title},#{photo.views},#{favourites(photo).length},#{get_sets(photo)}, #{get_groups(photo)},#{photo.tags}\n"
 
-     #puts "#{photo.title},#{photo.views},#{favourites(photo).length}\n"  
    end
    puts "tags by freq: #{photoset_tags(set_id)}"
 end
