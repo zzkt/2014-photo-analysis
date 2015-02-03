@@ -145,11 +145,15 @@ end
 def exfoliate (set_id)
    flickr.photosets.getPhotos(photoset_id: set_id, extras: 'views,tags,date_taken').photo.map do
      |photo|
-     puts "title: #{photo.title} \nviews: #{photo.views}"
-     puts "favourited by: #{favourites(photo)}"
-     puts "in sets: #{get_sets(photo)}"
-     puts "in groups: #{get_groups(photo)}"
-     puts "/// /  /"
+     # puts "title: #{photo.title} \nviews: #{photo.views}"
+     # puts "favourited by: #{favourites(photo)}"
+     # puts "in sets: #{get_sets(photo)}"
+     # puts "in groups: #{get_groups(photo)}"
+     # puts "/// /  /"
+     
+     puts "#{photo.title},#{photo.views},#{favourites(photo).length},#{get_sets(photo)}, #{get_groups(photo)},#{photo.tags}\n"
+
+     #puts "#{photo.title},#{photo.views},#{favourites(photo).length}\n"  
    end
    puts "tags by freq: #{photoset_tags(set_id)}"
 end
